@@ -1,7 +1,5 @@
-from discord_webhook import DiscordWebhook, DiscordEmbed
-from django.utils.log import AdminEmailHandler
-
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,32 +40,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'notes.middleware.DiscordLogMiddleware',
 ]
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'email': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-        },
-        'discord': {
-            'level': 'ERROR',
-            'class': 'discord_webhook.DiscordWebhookHandler',
-            'url': 'https://discord.com/api/webhooks/1176597086951710790/_aHDNjgmAU1sH2pbFGGTrGK6VnbXl8HrVFjBbxvPczMYH5NzA1C6fujrNloVtcNZtE_W',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['email', 'discord'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    },
-}
+
 
 
 
@@ -90,6 +66,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.wsgi.application'
+
 
 
 # Database
@@ -144,5 +121,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+    'http://localhost:3000'
 ]

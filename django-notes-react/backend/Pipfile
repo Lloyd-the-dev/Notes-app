@@ -5,8 +5,13 @@ name = "pypi"
 
 [packages]
 django = "*"
-djangorestframework = "*"
 django-cors-headers = "*"
+djangorestframework = "*"
+discord-webhook = "*"
+whitenoise = "*"
+discord = "*"
+django-discord-integration = "*"
+requests = "*"
 
 [dev-packages]
 
