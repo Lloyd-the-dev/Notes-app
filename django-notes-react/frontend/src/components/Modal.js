@@ -37,7 +37,7 @@ export default class CustomModal extends Component {
 
     return (
       <Modal isOpen={true} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Todo Item</ModalHeader>
+        <ModalHeader toggle={toggle}>Edit Note</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
@@ -48,7 +48,7 @@ export default class CustomModal extends Component {
                 name="title"
                 value={this.state.activeItem.title}
                 onChange={this.handleChange}
-                placeholder="Enter Todo Title"
+                placeholder="Enter Note Title"
               />
             </FormGroup>
             <FormGroup>
@@ -59,7 +59,7 @@ export default class CustomModal extends Component {
                 name="content"  
                 value={this.state.activeItem.content}
                 onChange={this.handleChange}
-                placeholder="Enter Todo Content"
+                placeholder="Enter Note Content"
               />
             </FormGroup>
           </Form>

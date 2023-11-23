@@ -61,7 +61,6 @@ class App extends Component {
     console.log("item.timestamp:", item.timestamp);
   console.log("viewTimestamp:", this.state.viewTimestamp);
 
-  // Include milliseconds in the viewTimestamp for accurate comparison
   const viewTimestampWithMs = this.state.viewTimestamp
     ? new Date(this.state.viewTimestamp).toISOString()
     : "";
@@ -114,7 +113,6 @@ class App extends Component {
                   Add Note
                 </button>
               </div>
-              {/* {this.renderTabList()} */}
               <ul className="list-group list-group-flush border-top-0">
                 {this.renderItems()}
               </ul>
